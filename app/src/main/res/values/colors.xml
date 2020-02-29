@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="test">#1312D2</color>
+    <color name="couleurBienvenue">#0403EF</color>
+    <color name="couleurListePrincipale_pressed">#1312D2</color>
+    <color name="colAddListButton_vccabFrag">#AAAAAA</color>
+    <color name="couleurBandeauApp">#3A61B8</color>
+</resources>
