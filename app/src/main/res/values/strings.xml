@@ -10,7 +10,4 @@
     <string name="hint_popUpAddList_sharedWith">Partagé avec: </string>
     <string name="text_popUpAddList_Title">Titre à insérer</string>
     <string name="text_buttonAddList_popUpAddList">créer</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
