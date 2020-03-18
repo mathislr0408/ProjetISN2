@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/lLayoutTransparent_PopUpWindow">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/style_popupwindow"
+        android:layout_marginBottom="@dimen/marginBot_popUpWindow"
+        android:layout_marginTop="@dimen/marginTop_popUpWindow"
+        android:layout_marginRight="@dimen/marginLeftRight_popUpWindow"
+        android:layout_marginLeft="@dimen/marginLeftRight_popUpWindow"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/epaisseurBordure_PopUpWindow"
+            android:background="@drawable/style_linearlayout_popupwindow"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/text_popUpAddList_Title"
+                    android:textColor="@color/couleurBandeauApp"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    ></TextView>
+
+                <Button
+                    android:id="@+id/bClose_PopUpWindow"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/round_clear_black_36dp" />
+
+                <TextView
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:background="@drawable/style_closebutton_popupwindow"
+                    android:layout_gravity="right"></TextView>
+
+            </FrameLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_popUpAddList_nameList"
+                android:layout_marginTop="@dimen/marginTop_betweenEdittextAndTitle_PopUpWindow"
+                >
+            </EditText>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginTop_betweenEditText_PopUpWindow"
+                android:hint="@string/hint_popUpAddList_sharedWith"
+                >
+            </EditText>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp">
+
+                    <Button
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/style_buttonaddlist_popupwindow"
+                        android:text="@string/text_buttonAddList_popUpAddList"
+                        android:textColor="#FFFFFF"></Button>
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

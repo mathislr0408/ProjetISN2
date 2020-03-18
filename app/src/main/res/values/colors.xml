@@ -8,4 +8,5 @@
     <color name="couleurListePrincipale_pressed">#1312D2</color>
     <color name="colAddListButton_vccabFrag">#AAAAAA</color>
     <color name="couleurBandeauApp">#3A61B8</color>
+    <color name="colButtonClose_PopUpWindow">#F99D08</color>
 </resources>

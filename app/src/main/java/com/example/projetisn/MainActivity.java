@@ -1,8 +1,13 @@
 package com.example.projetisn;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private float motionX;
     private String motionDirection = null;
     boolean isAnimation = false;
+
 
     private void setFragment(Fragment fragment) {
         Fragment currentFrag = getCurrentFragment();
@@ -181,11 +187,7 @@ public class MainActivity extends AppCompatActivity {
         vocabFrag = new VocabFrag();
         friendsFrag = new FriendsFrag();
         profilFrag = new ProfilFrag();
-
-
         setFragment(vocabFrag);
-        HomeMadeBackStack.add(vocabFrag);
-
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -193,36 +195,36 @@ public class MainActivity extends AppCompatActivity {
                 R.id.navigation_vocab, R.id.naviagtion_friends, R.id.navigation_profil)
                 .build();*/
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-                                                        @Override
-                                                        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                                                            switch (menuItem.getItemId()) {
-                                                                case R.id.navigation_vocab:
-                                                                    if (!programaticallySelected) {
-                                                                        setFragment(vocabFrag);
-                                                                    } else {
-                                                                        programaticallySelected = false;
-                                                                    }
-                                                                    return true;
-                                                                case R.id.navigation_friends:
-                                                                    if (!programaticallySelected) {
-                                                                        setFragment(friendsFrag);
-                                                                    } else {
-                                                                        programaticallySelected = false;
-                                                                    }
-                                                                    return true;
-                                                                case R.id.navigation_profil:
-                                                                    if (!programaticallySelected) {
-                                                                        setFragment(profilFrag);
-                                                                    } else {
-                                                                        programaticallySelected = false;
-                                                                    }
-                                                                    return true;
-                                                                default:
-                                                                    return false;
-                                                            }
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.navigation_vocab:
+                        if (!programaticallySelected) {
+                            setFragment(vocabFrag);
+                        } else {
+                            programaticallySelected = false;
+                        }
+                        return true;
+                        case R.id.navigation_friends:
+                            if (!programaticallySelected) {
+                                setFragment(friendsFrag);
+                            } else {
+                                programaticallySelected = false;
+                            }
+                            return true;
+                            case R.id.navigation_profil:
+                                if (!programaticallySelected) {
+                                    setFragment(profilFrag);
+                                } else {
+                                    programaticallySelected = false;
+                                }
+                                return true;
+                                default:
+                                    return false;
+                }
 
-                                                        }
-                                                    }
+            }
+        }
 
         );
     }

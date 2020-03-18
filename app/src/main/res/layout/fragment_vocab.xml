@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VocabFrag">
+    tools:context=".VocabFrag"
+    android:id="@+id/lFragmentVocab_FraeLayout">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -40,7 +41,7 @@
         </LinearLayout>
     </ScrollView>
     <Button
-        android:id="@+id/bAjouterliste"
+        android:id="@+id/bAddList"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/style_addlist"
