@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    >
+        <FrameLayout
+            android:id="@+id/lAppThem_FrameLayout_LoginActivity"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:background="@drawable/style_appname_loginactivity">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/tvAppName_LoginActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Projet ISN"
+                    android:textColor="#FFFFFF"
+                    android:textSize="45sp">
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Courosse Augustin - Leroy Mathis"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"></TextView>
+            </LinearLayout>
+        </FrameLayout>
+        <EditText
+            android:id="@+id/et_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username or E-mail adress"
+            android:layout_marginTop="@dimen/marginTop_etPW_etEmail_loginActivity"
+            android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+            android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+
+        <EditText
+            android:id="@+id/et_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:layout_marginTop="@dimen/marginTop_etPW_etEmail_loginActivity"
+            android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+            android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/marginTop_buttonLogin_loginActivity">
+
+            <Button
+                android:id="@+id/bLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/marginLeftRight_buttonLogin_LoginActivity"
+                android:layout_marginLeft="@dimen/marginLeftRight_buttonLogin_LoginActivity"
+                android:text="@string/text_buttonLogin_LoginActivity"
+                android:background="@drawable/style_buttonlogin_loginactivity"
+                android:textColor="#FFFFFF"
+                />
+                <TextView
+                    android:id="@+id/tvStartRegisterActivity_LoginActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/marginLeftRight_buttonLogin_LoginActivity"
+                    android:layout_marginRight="@dimen/marginLeftRight_buttonLogin_LoginActivity"
+                    android:layout_marginBottom="@dimen/marginBottom_tvRegister_LoginActivity"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:hint="@string/text_textRegister_LoginActivity"
+                    android:textColorHint="@color/couleurBienvenue_TransparencyAA"
+                    android:onClick="onClickTvRegister"
+                    android:clickable="true"></TextView>
+        </FrameLayout>
+
+</LinearLayout>

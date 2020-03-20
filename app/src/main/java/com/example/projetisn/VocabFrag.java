@@ -11,12 +11,14 @@ import androidx.fragment.app.Fragment;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.zip.Inflater;
@@ -33,11 +35,15 @@ public class VocabFrag extends Fragment {
     private PopupWindow popupWindow;
     private FrameLayout lVocabFrag_FrameLyout;
     private LinearLayout lLinearLayoutTransparent_PopUpWindow;
+    private TextView tvCrossClose_PopUpWindow;
 
     public VocabFrag() {
         // Required empty public constructor
     }
 
+    public void onClicktvClosePopUp(){
+        this.popupWindow.dismiss();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,6 +55,7 @@ public class VocabFrag extends Fragment {
         this.lVocabFrag_FrameLyout = (FrameLayout) v.findViewById(R.id.lFragmentVocab_FraeLayout);
         this.lLinearLayoutTransparent_PopUpWindow = (LinearLayout) w.findViewById(R.id.lLayoutTransparent_PopUpWindow);
         lLinearLayoutTransparent_PopUpWindow.setAlpha((float)(0.1));
+        this.tvCrossClose_PopUpWindow = w.findViewById(R.id.tvCross_close_PopUpWindow);
         // Inflate the layout for this fragment
         return v;
     }

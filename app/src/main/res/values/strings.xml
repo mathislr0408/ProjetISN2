@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">ProjetISN</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
+    <!-- strings menu -->
     <string name="title_friends">Amis</string>
     <string name="title_vocab">Vocabulaire</string>
     <string name="title_profil">Profil</string>
+
+    <!-- strings popUpAddList -->
     <string name="hint_popUpAddList_nameList">Nom de la liste</string>
     <string name="hint_popUpAddList_sharedWith">Partagé avec: </string>
     <string name="text_popUpAddList_Title">Titre à insérer</string>
     <string name="text_buttonAddList_popUpAddList">créer</string>
+
+    <!-- strings LoginActivity -->
+
+    <string name="text_buttonLogin_LoginActivity">Se connecter</string>
+    <string name="text_textRegister_LoginActivity">Créer un compte</string>
 </resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <gradient android:startColor="@color/couleurBandeauAppReserve"
+    <corners android:bottomLeftRadius="@dimen/radius_background_AppName_LoginActivity"/>
+    <gradient android:startColor="@color/couleurBienvenue"
         android:endColor="@color/couleurBandeauApp"
         android:angle="45"></gradient>
-    <corners android:bottomLeftRadius="10dp"/>
 </shape>

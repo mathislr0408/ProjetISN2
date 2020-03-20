@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="@color/couleurBandeauApp"/>
+    <gradient android:startColor="@color/couleurBandeauAppReserve"
+        android:endColor="@color/couleurBandeauApp"
+        android:angle="45"></gradient>
     <corners android:radius="10dp"/>
 </shape>
