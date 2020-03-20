@@ -57,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_popUpAddList_nameList"
                     android:layout_marginTop="@dimen/marginTop_betweenEdittextAndTitle_PopUpWindow"
+                    android:inputType="text"
                     >
                 </EditText>
                 <EditText
@@ -64,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/marginTop_betweenEditText_PopUpWindow"
                     android:hint="@string/hint_popUpAddList_sharedWith"
+                    android:inputType="text"
                     >
                 </EditText>
                 <FrameLayout

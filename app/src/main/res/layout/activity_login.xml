@@ -44,7 +44,8 @@
             android:hint="Username or E-mail adress"
             android:layout_marginTop="@dimen/marginTop_etPW_etEmail_loginActivity"
             android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
-            android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+            android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+            android:inputType="textWebEmailAddress|text"/>
 
         <EditText
             android:id="@+id/et_login_password"
@@ -53,7 +54,9 @@
             android:hint="Password"
             android:layout_marginTop="@dimen/marginTop_etPW_etEmail_loginActivity"
             android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
-            android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+            android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+            android:inputType="textPassword"
+            />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -70,6 +73,8 @@
                 android:text="@string/text_buttonLogin_LoginActivity"
                 android:background="@drawable/style_buttonlogin_loginactivity"
                 android:textColor="#FFFFFF"
+                android:onClick="onClickbLogin"
+                android:clickable="true"
                 />
                 <TextView
                     android:id="@+id/tvStartRegisterActivity_LoginActivity"

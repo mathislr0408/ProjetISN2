@@ -19,4 +19,8 @@
     <dimen name="marginLeftRight_buttonLogin_LoginActivity">90dp</dimen>
     <dimen name="radius_background_AppName_LoginActivity">150dp</dimen>
     <dimen name="marginBottom_tvRegister_LoginActivity">15dp</dimen>
+
+    <!-- dimens RegisterActivity -->
+
+    <dimen name="marginTop_et_RegisterActivity">30dp</dimen>
 </resources>

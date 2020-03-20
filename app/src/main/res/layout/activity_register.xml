@@ -7,81 +7,70 @@
     tools:context=".LoginActivity"
     android:orientation="vertical"
     >
-    <FrameLayout
-        android:id="@+id/lAppThem_FrameLayout_LoginActivity"
+    <LinearLayout
+        android:id="@+id/lAppThem_FrameLayout_RegisterActivity"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:orientation="vertical"
         android:background="@drawable/style_appname_loginactivity">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-            <TextView
-                android:id="@+id/tvAppName_LoginActivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="BITE ISN"
-                android:textColor="#FFFFFF"
-                android:textSize="45sp">
-            </TextView>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Courosse Augustin - Leroy Mathis"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"></TextView>
-        </LinearLayout>
-    </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="En attente"
+            android:textSize="50dp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center"
+            android:gravity="center"
+            ></TextView>
+    </LinearLayout>
     <EditText
-        android:id="@+id/et_login_username"
+        android:id="@+id/et_register_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username or E-mail adress"
-        android:layout_marginTop="@dimen/marginTop_etPW_etEmail_loginActivity"
+        android:hint="Username"
+        android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
         android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
         android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
-
     <EditText
-        android:id="@+id/et_login_password"
+        android:id="@+id/et_register_emailAdress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail adress"
+        android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
+        android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+        android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+    <EditText
+        android:id="@+id/et_register_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:layout_marginTop="@dimen/marginTop_etPW_etEmail_loginActivity"
+        android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
+        android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+        android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+
+    <EditText
+        android:id="@+id/et_register_confirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm password"
+        android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
         android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
         android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/marginTop_buttonLogin_loginActivity">
-
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
         <Button
             android:id="@+id/bLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:layout_marginRight="@dimen/marginLeftRight_buttonLogin_LoginActivity"
             android:layout_marginLeft="@dimen/marginLeftRight_buttonLogin_LoginActivity"
-            android:text="@string/text_buttonLogin_LoginActivity"
+            android:layout_marginBottom="@dimen/marginBottom_tvRegister_LoginActivity"
+            android:text="@string/text_textRegister_LoginActivity"
             android:background="@drawable/style_buttonlogin_loginactivity"
             android:textColor="#FFFFFF"
             />
-        <TextView
-            android:id="@+id/tvStartRegisterActivity_LoginActivity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/marginLeftRight_buttonLogin_LoginActivity"
-            android:layout_marginRight="@dimen/marginLeftRight_buttonLogin_LoginActivity"
-            android:layout_marginBottom="@dimen/marginBottom_tvRegister_LoginActivity"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:hint="@string/text_textRegister_LoginActivity"
-            android:textColorHint="@color/couleurBienvenue_TransparencyAA"></TextView>
-    </FrameLayout>
-
+     </FrameLayout>
 </LinearLayout>
