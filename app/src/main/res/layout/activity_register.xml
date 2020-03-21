@@ -27,14 +27,17 @@
         android:id="@+id/et_register_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
+        android:hint="Username (min. 4 charactères)"
+        android:inputType="text"
         android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
         android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
-        android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+        android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+        />
     <EditText
         android:id="@+id/et_register_emailAdress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textWebEmailAddress"
         android:hint="E-mail adress"
         android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
         android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
@@ -43,19 +46,22 @@
         android:id="@+id/et_register_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:inputType="textPassword"
+        android:hint="Password (min. 5 charactères)"
         android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
         android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
-        android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+        android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+        android:outlineSpotShadowColor="@color/couleurBienvenue"/>
 
     <EditText
         android:id="@+id/et_register_confirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Confirm password"
-        android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
         android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
-        android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"/>
+        android:layout_marginTop="@dimen/marginTop_et_RegisterActivity"
+        android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+        android:hint="Confirm password"
+        android:inputType="textPassword" />
 
     <FrameLayout
          android:layout_width="match_parent"
@@ -71,6 +77,7 @@
             android:text="@string/text_textRegister_LoginActivity"
             android:background="@drawable/style_buttonlogin_loginactivity"
             android:textColor="#FFFFFF"
+            android:onClick="onClickRegisterButton"
             />
      </FrameLayout>
 </LinearLayout>
