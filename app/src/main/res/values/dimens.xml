@@ -1,5 +1,16 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="height_BottomNavView_MainActivity">70dp</dimen>
+
+    <!-- dimens VocabFrag -->
+
+    <dimen name="height_List_VocabFrag">40dp</dimen>
+    <dimen name="textSize_List_VocabFrag">16dp</dimen>
+    <dimen name="marginLeftRight_List_VocabFrag">25dp</dimen>
+
+    <!-- dimens profilFrag -->
+
+    <dimen name="dimen_RoundPicture_ProfilFrag">100dp</dimen>
 
     <!-- dimen PopUpWindow-->
     <dimen name="activity_horizontal_margin">16dp</dimen>
@@ -16,11 +27,16 @@
     <dimen name="marginTop_etPW_etEmail_loginActivity">55dp</dimen>
     <dimen name="marginLeftRight_etPW_etEmail_LoginActivity">25dp</dimen>
     <dimen name="marginTop_buttonLogin_loginActivity">75dp</dimen>
-    <dimen name="marginLeftRight_buttonLogin_LoginActivity">90dp</dimen>
+    <dimen name="widthButtonLogin_LoginActivity">250dp</dimen>
     <dimen name="radius_background_AppName_LoginActivity">150dp</dimen>
     <dimen name="marginBottom_tvRegister_LoginActivity">15dp</dimen>
 
     <!-- dimens RegisterActivity -->
-
     <dimen name="marginTop_et_RegisterActivity">30dp</dimen>
+
+    <!-- dimens ProfilFrag -->
+
+    <dimen name="marginBottom_SignOutButton_ProfilFrag"><!-- =margin + heightBottomNav --> 85dp </dimen>
+    <dimen name="marginRight_changeUsernameButton_ProfilFrag">5dp</dimen>
+
 </resources>

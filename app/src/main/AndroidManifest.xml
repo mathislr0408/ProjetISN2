@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity"
-            android:theme="@style/AppTheme.NoTitle"></activity>
+        <activity android:name=".InfoUserActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoTitle" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoTitle">
@@ -24,7 +26,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

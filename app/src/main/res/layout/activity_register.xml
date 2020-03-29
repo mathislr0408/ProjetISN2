@@ -68,11 +68,9 @@
          android:layout_height="match_parent">
         <Button
             android:id="@+id/bLogin"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/widthButtonLogin_LoginActivity"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginRight="@dimen/marginLeftRight_buttonLogin_LoginActivity"
-            android:layout_marginLeft="@dimen/marginLeftRight_buttonLogin_LoginActivity"
+            android:layout_gravity="bottom|center"
             android:layout_marginBottom="@dimen/marginBottom_tvRegister_LoginActivity"
             android:text="@string/text_textRegister_LoginActivity"
             android:background="@drawable/style_buttonlogin_loginactivity"

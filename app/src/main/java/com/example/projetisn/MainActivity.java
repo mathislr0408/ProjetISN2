@@ -2,12 +2,15 @@ package com.example.projetisn;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,6 +30,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView navView;
+    private LinearLayout lActionBar;
     private VocabFrag vocabFrag;
     private FriendsFrag friendsFrag;
     private ProfilFrag profilFrag;
@@ -183,7 +187,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
         navView = findViewById(R.id.nav_view);
+        lActionBar = findViewById(R.id.lActionbar_MainActivity);
+        lActionBar.getLayoutParams().height = (int)(height / 8.5);
         vocabFrag = new VocabFrag();
         friendsFrag = new FriendsFrag();
         profilFrag = new ProfilFrag();

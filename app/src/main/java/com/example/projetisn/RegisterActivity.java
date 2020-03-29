@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -114,6 +115,11 @@ public class RegisterActivity extends AppCompatActivity {
         }else {
             String email = etEmailRegister.getText().toString();
             String password = etPwRegister.getText().toString();
+            String username = etUsernameRegister.getText().toString();
+
+            final UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(username)
+                    .build();
 
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -121,14 +127,15 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                Toast.makeText(RegisterActivity.this, "registered", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "registered, bienvenue" + mAuth.getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                user.updateProfile(profileUpdates);
                                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                                 //updateUI(user);
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(RegisterActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Authentication failed. \n" + task.getException().getMessage(),
+                                        Toast.LENGTH_LONG).show();
                                 //updateUI(null);
                             }
 

@@ -99,8 +99,8 @@ public class LoginActivity extends AppCompatActivity {
                             } else {
                                 // If sign in fails, display a message to the user.
                                 //Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                Toast.makeText(LoginActivity.this, "Veuillez entrer des informations valides \n" +
-                                                "Pas de compte? Créez en un!",
+                                Toast.makeText(LoginActivity.this, "Veuillez entrer des informations valides\n"  + task.getException().getMessage() +
+                                                "\nPas de compte? Créez en un!" ,
                                         Toast.LENGTH_LONG).show();
                                 //updateUI(null);
                                 // ...
@@ -113,8 +113,8 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, "J'ai pas encore activé le login avec username wsh", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(LoginActivity.this, "Veuillez entrer des informations valides \n" +
-                            "Pas de compte? Créez en un!",
+            Toast.makeText(LoginActivity.this, "Veuillez entrer des informations valides" + "\nFormat des informations entrées non valide" +
+                            "\nPas de compte? Créez en un!",
                     Toast.LENGTH_LONG).show();
         }
     }
@@ -122,6 +122,26 @@ public class LoginActivity extends AppCompatActivity {
     public void onClickTvRegister(View v){
         Intent intent = new Intent(getBaseContext(), RegisterActivity.class);
         startActivity(intent);
+    }
+
+    public void onClickTvForgotPw(View v){
+        if (isEmail()){
+            String email = etEmailUsername_LoginActivity.getText().toString();
+            mAuth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "email envoyé", Toast.LENGTH_LONG).show();
+                            }else{
+                                Toast.makeText(LoginActivity.this, "adresse mail non valide\n" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+        }else{
+            Toast.makeText(LoginActivity.this, "veuillez entrer une adresse email valide afin de réinitialiser votre mot de passe" ,
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

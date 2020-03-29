@@ -17,15 +17,15 @@
             <Button
                 android:id="@+id/bListePrincipale"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="25dp"
+                android:layout_height="@dimen/height_List_VocabFrag"
+                android:layout_marginLeft="@dimen/marginLeftRight_List_VocabFrag"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="@dimen/marginLeftRight_List_VocabFrag"
                 android:background="@drawable/style_list"
                 android:gravity="center"
                 android:text="tout mon vocabulaire"
                 android:textColor="#DDDDFF"
-                android:textSize="16sp"></Button>
+                android:textSize="@dimen/textSize_List_VocabFrag"></Button>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -50,8 +50,8 @@
         android:gravity="center"
         android:textSize="32sp"
         android:textColor="#FFFFFF"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="@dimen/marginLeftRight_List_VocabFrag"
+        android:layout_marginRight="@dimen/marginLeftRight_List_VocabFrag"
         android:layout_marginBottom="95dp">
 
     </Button>
