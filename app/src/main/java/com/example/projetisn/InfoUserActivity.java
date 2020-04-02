@@ -3,11 +3,14 @@ package com.example.projetisn;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +30,11 @@ public class InfoUserActivity extends AppCompatActivity {
     private EditText etNewUsername;
     private TextView tvEmail;
     private String errorMessage ="";
+
+    float x1, x2, y1, y2, motionX;
+    String motionDirection;
+    final static int MIN_DISTANCE_X = 150;
+    final static int MAX_DISTANCE_Y = 150;
 
     private Boolean validLength(){
         if (etNewUsername.length() > 3){
@@ -55,11 +63,30 @@ public class InfoUserActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                x1 = event.getX();
+                y1 = event.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = event.getX();
+                y2 = event.getY();
+                motionX = x1 - x2;
+                if (motionX < 0 && Math.abs(motionX) > MIN_DISTANCE_X && Math.abs(y1 - y2) < MAX_DISTANCE_Y) {
+                    finish();
+                }
+        }
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_user);
 
         mAuth = FirebaseAuth.getInstance();
+        lActionBar = findViewById(R.id.lActionbar_InfoUserActivity);
         tvUsername = findViewById(R.id.tvUsername_InfoUserActivity);
         bChangeUsername = findViewById(R.id.bChangeUsername_InfoUserActivity);
         etNewUsername = findViewById(R.id.etNewUsername_InfoUserActivity);
@@ -71,7 +98,6 @@ public class InfoUserActivity extends AppCompatActivity {
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
 
-        lActionBar = findViewById(R.id.lActionbar_InfoUserActivity);
         lActionBar.getLayoutParams().height = (int)(height / 8.5);
         etNewUsername.setWidth((int)(width/1.75));
         tvUsername.setText(mAuth.getCurrentUser().getDisplayName());
