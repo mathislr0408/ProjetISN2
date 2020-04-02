@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,11 +23,12 @@ public class InfoUserActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private LinearLayout lActionBar;
-    private TextView tvUsername;
-    private Button bChangeUsername;
+    private FrameLayout lUserIcon;
     private EditText etNewUsername;
     private TextView tvEmail;
     private String errorMessage ="";
+    private TextView tvPassword;
+    private Button bChangeInfos;
 
     private Boolean validLength(){
         if (etNewUsername.length() > 3){
@@ -60,11 +62,12 @@ public class InfoUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info_user);
 
         mAuth = FirebaseAuth.getInstance();
-        tvUsername = findViewById(R.id.tvUsername_InfoUserActivity);
-        bChangeUsername = findViewById(R.id.bChangeUsername_InfoUserActivity);
+        lUserIcon = findViewById(R.id.lIconUser_infoUserActivity);
         etNewUsername = findViewById(R.id.etNewUsername_InfoUserActivity);
         etNewUsername.setText("");
         tvEmail = findViewById(R.id.tvEmail_InfoUserActivity);
+        tvPassword = findViewById(R.id.tvPw_InfoUserActivity);
+        bChangeInfos = findViewById(R.id.bChangeInfos_InfosUserActivity);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -73,11 +76,15 @@ public class InfoUserActivity extends AppCompatActivity {
 
         lActionBar = findViewById(R.id.lActionbar_InfoUserActivity);
         lActionBar.getLayoutParams().height = (int)(height / 8.5);
-        etNewUsername.setWidth((int)(width/1.75));
-        tvUsername.setText(mAuth.getCurrentUser().getDisplayName());
+        lUserIcon.getLayoutParams().height = (int)(height/9);
+        lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
+        etNewUsername.setWidth((int)(width/1.2));
+        etNewUsername.setText(mAuth.getCurrentUser().getDisplayName());
+        tvEmail.setWidth((int)(width/1.2));
         tvEmail.setText(mAuth.getCurrentUser().getEmail());
+        tvPassword.setWidth((int)(width/1.2));
 
-        bChangeUsername.setOnClickListener(new View.OnClickListener() {
+        bChangeInfos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (validLength() && validUsername()) {
@@ -88,7 +95,8 @@ public class InfoUserActivity extends AppCompatActivity {
                     user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            tvUsername.setText(mAuth.getCurrentUser().getDisplayName());
+                            Toast.makeText(getBaseContext(), "username mis à jour", Toast.LENGTH_SHORT).show();
+                            etNewUsername.setText(mAuth.getCurrentUser().getDisplayName());
 
                         }
                     });
