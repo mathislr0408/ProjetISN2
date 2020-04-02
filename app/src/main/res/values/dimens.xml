@@ -10,6 +10,8 @@
 
     <!-- dimens profilFrag -->
 
+    <dimen name="marginBottom_SignOutButton_ProfilFrag"><!-- =margin + heightBottomNav --> 85dp </dimen>
+    <dimen name="marginRight_changeUsernameButton_ProfilFrag">5dp</dimen>
     <dimen name="dimen_RoundPicture_ProfilFrag">100dp</dimen>
 
     <!-- dimen PopUpWindow-->
@@ -34,9 +36,9 @@
     <!-- dimens RegisterActivity -->
     <dimen name="marginTop_et_RegisterActivity">30dp</dimen>
 
-    <!-- dimens ProfilFrag -->
+    <!-- dimens InfoUserActivity -->
 
-    <dimen name="marginBottom_SignOutButton_ProfilFrag"><!-- =margin + heightBottomNav --> 85dp </dimen>
-    <dimen name="marginRight_changeUsernameButton_ProfilFrag">5dp</dimen>
+    <dimen name="marginTopBetweenInfos_InfoUserActivity">35dp</dimen>
+
 
 </resources>
