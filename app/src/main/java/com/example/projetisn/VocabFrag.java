@@ -2,6 +2,7 @@ package com.example.projetisn;
 
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -63,11 +64,16 @@ public class VocabFrag extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         DisplayMetrics dm = new DisplayMetrics();
         this.getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
-
         final int width = dm.widthPixels;
         final int height = dm.heightPixels;
+
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            bAddList.setHeight(height/8);
+        }
+
         this.bAddList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

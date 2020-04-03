@@ -66,7 +66,7 @@ public class ProfilFrag extends Fragment {
             lUserIcon.getLayoutParams().height = (int) (height / 9);
             lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
         }else{
-            lUserIcon.getLayoutParams().height = (int) (height / 5);
+            lUserIcon.getLayoutParams().height = (int) (width / 9);
             lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
         }
         bSignOut.setOnClickListener(new View.OnClickListener() {
