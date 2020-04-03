@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoUserActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/lActionbar_InfoUserActivity"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_bandeauapp"
+        android:layout_marginBottom="30dp"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mon compte"
+                android:layout_gravity="center"
+                android:textColor="#FFF"
+                android:textSize="30dp"
+                ></TextView>
+        </FrameLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lLayout_InfoUserActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/lIconUser_infoUserActivity"
+                    android:layout_width="@dimen/dimen_RoundPicture_ProfilFrag"
+                    android:layout_height="@dimen/dimen_RoundPicture_ProfilFrag"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/round_profil"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/adduser_6464_whiteicon"></TextView>
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvGreetingsText_ProfilFrag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Ajouter une photo"
+                    android:textColor="@color/couleurBienvenue"
+                    android:textSize="20dp"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/style_background_layout_infos_infouser_activity"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etNewUsername_InfoUserActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/marginTopBetweenInfos_InfoUserActivity"
+                    android:gravity="left"
+                    android:hint="à désactiver, database gourmand"></EditText>
+
+                <TextView
+                    android:id="@+id/tvEmail_InfoUserActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textWebEmailAddress"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/marginTopBetweenInfos_InfoUserActivity"
+                    android:gravity="left"
+                    android:text="email adress"></TextView>
+
+                <EditText
+                    android:id="@+id/tvPw_InfoUserActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/marginTopBetweenInfos_InfoUserActivity"
+                    android:layout_marginBottom="@dimen/marginTopBetweenInfos_InfoUserActivity"
+                    android:gravity="left"
+                    android:text="Password" />
+            </LinearLayout>
+            <FrameLayout
+                android:id="@+id/lFrameLayout_ButtonChangeInfos_InfoUserActivity"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+                <Button
+                    android:id="@+id/bChangeInfos_InfosUserActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center|bottom"
+                    android:layout_marginLeft="@dimen/marginLeftRight_List_VocabFrag"
+                    android:layout_marginRight="@dimen/marginLeftRight_List_VocabFrag"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/style_list"
+                    android:text="Enregistrer les modificattions"
+                    android:textAllCaps="false"
+                    android:textColor="#FFF"></Button>
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -3,6 +3,7 @@ package com.example.projetisn;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -102,8 +103,14 @@ public class InfoUserActivity extends AppCompatActivity {
 
         lActionBar = findViewById(R.id.lActionbar_InfoUserActivity);
         lActionBar.getLayoutParams().height = (int)(height / 8.5);
-        lUserIcon.getLayoutParams().height = (int)(height/9);
-        lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
+
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            lUserIcon.getLayoutParams().height = (int) (height / 9);
+            lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
+        }else {
+            lUserIcon.getLayoutParams().height = (int) (width / 9);
+            lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
+        }
         etNewUsername.setWidth((int)(width/1.2));
         etNewUsername.setText(mAuth.getCurrentUser().getDisplayName());
         tvEmail.setWidth((int)(width/1.2));
