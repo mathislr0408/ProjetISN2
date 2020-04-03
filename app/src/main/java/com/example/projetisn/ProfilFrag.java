@@ -1,7 +1,9 @@
 package com.example.projetisn;
 
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -47,6 +49,7 @@ public class ProfilFrag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_profil, container, false);
+
         bSignOut = v.findViewById(R.id.bSignOut_ProfilFrag);
         mAuth = FirebaseAuth.getInstance();
         bInfoUser = v.findViewById(R.id.binfoUser_ProfilFrag);
@@ -59,9 +62,13 @@ public class ProfilFrag extends Fragment {
         int width = displayMetrics.widthPixels;
 
         tvGreetingsText.setText("Bonjour " + mAuth.getCurrentUser().getDisplayName());
-        lUserIcon.getLayoutParams().height = (int)(height / 9);
-        lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
-
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            lUserIcon.getLayoutParams().height = (int) (height / 9);
+            lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
+        }else{
+            lUserIcon.getLayoutParams().height = (int) (height / 5);
+            lUserIcon.getLayoutParams().width = lUserIcon.getLayoutParams().height;
+        }
         bSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
