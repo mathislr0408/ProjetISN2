@@ -201,6 +201,8 @@ public class MainActivity extends AppCompatActivity {
         profilFrag = new ProfilFrag();
         setFragment(vocabFrag);
 
+        navView.getLayoutParams().height = height / 9;
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
        /* AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(

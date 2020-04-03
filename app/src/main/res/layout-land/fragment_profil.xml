@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilFrag"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="230dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/lIconUser_ProfilFrag"
+            android:layout_width="@dimen/dimen_RoundPicture_ProfilFrag"
+            android:layout_height="@dimen/dimen_RoundPicture_ProfilFrag"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:background="@drawable/round_profil"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/user_whiteicon"
+                ></TextView>
+        </FrameLayout>
+        <TextView
+            android:id="@+id/tvGreetingsText_ProfilFrag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Bienvenue les men in black"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/couleurBienvenue"
+            ></TextView>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/binfoUser_ProfilFrag"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_List_VocabFrag"
+                android:layout_gravity="bottom|center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_list"
+                android:text="mes informations personnelles"
+                android:layout_marginLeft="3dp"
+                android:textColor="#FFF"
+                android:textSize="14sp"
+                android:layout_marginBottom="@dimen/marginBottom_SignOutButton_ProfilFrag"
+                ></Button>
+        </FrameLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="3dp">
+        <Button
+            android:id="@+id/bSignOut_ProfilFrag"
+            android:layout_width="150dp"
+            android:layout_height="@dimen/height_List_VocabFrag"
+            android:layout_gravity="top|right"
+            android:background="@drawable/style_buttonlogin_loginactivity"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:text="sign out"
+            android:textColor="#FFF"
+            android:layout_marginBottom="@dimen/marginBottom_SignOutButton_ProfilFrag"
+            ></Button>
+    </FrameLayout>
+</FrameLayout>
