@@ -199,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
         vocabFrag = new VocabFrag();
         friendsFrag = new FriendsFrag();
         profilFrag = new ProfilFrag();
-        setFragment(vocabFrag);
 
         navView.getLayoutParams().height = height / 9;
 
