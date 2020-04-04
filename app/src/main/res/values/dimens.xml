@@ -17,19 +17,25 @@
     <!-- dimen PopUpWindow-->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="marginTop_popUpWindow">70dp</dimen>
-    <dimen name="marginBot_popUpWindow">310dp</dimen>
+    <dimen name="marginTop_popUpWindow">90dp</dimen>
+    <dimen name="marginBot_popUpWindow">290dp</dimen>
     <dimen name="marginLeftRight_popUpWindow">5dp</dimen>
     <dimen name="marginTop_betweenEdittextAndTitle_PopUpWindow">30dp</dimen>
+    <dimen name="marginTop_betweenEdittextAndTitle_PopUpWindow_land">20dp</dimen>
     <dimen name="marginTop_betweenEditText_PopUpWindow">20dp</dimen>
+    <dimen name="marginTop_betweenEditText_PopUpWindow_land">12dp</dimen>
     <dimen name="epaisseurBordure_PopUpWindow">5dp</dimen>
 
     <!-- dimens LoginActivity -->
     <dimen name="marginTop_AppName_LoginActivity">65dp</dimen>
     <dimen name="marginTop_etPW_etEmail_loginActivity">55dp</dimen>
+    <dimen name="marginTop_etPW_etEmail_loginActivity_land">15dp</dimen>
     <dimen name="marginLeftRight_etPW_etEmail_LoginActivity">25dp</dimen>
     <dimen name="marginTop_buttonLogin_loginActivity">75dp</dimen>
+    <dimen name="marginTop_buttonLogin_loginActivity_land">25dp</dimen>
     <dimen name="widthButtonLogin_LoginActivity">250dp</dimen>
+    <dimen name="widthButtonLogin_LoginActivity_land">200dp</dimen>
+    <dimen name="heightButtonLogin_LoginActivity_land">35dp</dimen>
     <dimen name="radius_background_AppName_LoginActivity">150dp</dimen>
     <dimen name="marginBottom_tvRegister_LoginActivity">15dp</dimen>
 

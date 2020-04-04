@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    >
+        <FrameLayout
+            android:id="@+id/lAppThem_FrameLayout_LoginActivity"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:background="@drawable/style_appname_loginactivity">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/tvAppName_LoginActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Projet ISN"
+                    android:textColor="#FFFFFF"
+                    android:textSize="42dp">
+                </TextView>
+            </LinearLayout>
+        </FrameLayout>
+        <EditText
+            android:id="@+id/et_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username or E-mail adress"
+            android:layout_marginTop="@dimen/marginTop_etPW_etEmail_loginActivity_land"
+            android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+            android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+            android:inputType="textWebEmailAddress|text"/>
+
+        <EditText
+            android:id="@+id/et_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password (min. 5 charactères)"
+            android:layout_marginTop="@dimen/marginTop_etPW_etEmail_loginActivity_land"
+            android:layout_marginLeft="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+            android:layout_marginRight="@dimen/marginLeftRight_etPW_etEmail_LoginActivity"
+            android:inputType="textPassword"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/marginTop_buttonLogin_loginActivity_land"
+            >
+
+            <Button
+                android:id="@+id/bLogin"
+                android:layout_width="@dimen/widthButtonLogin_LoginActivity_land"
+                android:layout_height="@dimen/heightButtonLogin_LoginActivity_land"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/text_buttonLogin_LoginActivity"
+                android:background="@drawable/style_buttonlogin_loginactivity"
+                android:textColor="#FFFFFF"
+                android:onClick="onClickbLogin"
+                android:clickable="true"
+                />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/marginBottom_tvRegister_LoginActivity"
+                    android:layout_gravity="bottom"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvStartRegisterActivity_LoginActivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:hint="@string/text_textRegister_LoginActivity"
+                        android:textColorHint="@color/couleurBienvenue_TransparencyAA"
+                        android:onClick="onClickTvRegister"
+                        android:clickable="true"></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:hint="|"
+                        android:textColorHint="@color/couleurBienvenue_TransparencyAA"
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/tvForgotPassword_ActivityLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="mot de passe oublié?"
+                        android:textColorHint="@color/couleurBienvenue_TransparencyAA"
+                        android:clickable="true"
+                        android:onClick="onClickTvForgotPw"
+                        ></TextView>
+                </LinearLayout>
+        </FrameLayout>
+
+</LinearLayout>

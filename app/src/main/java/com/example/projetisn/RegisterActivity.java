@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -32,9 +34,11 @@ public class RegisterActivity extends AppCompatActivity {
     String errorMessage = "";
     private FirebaseAuth mAuth;
 
+    float x1, x2, y1, y2, motionX;
+    final static int MIN_DISTANCE_X = 150;
+    final static int MAX_DISTANCE_Y = 150;
 
     //checking the validity of the infos
-
     private boolean checkEditTextRegister(){
         errorMessage = "";
         boolean bool1;
@@ -148,6 +152,26 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                x1 = event.getX();
+                y1 = event.getY();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = event.getX();
+                y2 = event.getY();
+                motionX = x1 - x2;
+
+                if (motionX < 0 && Math.abs(motionX) > MIN_DISTANCE_X && Math.abs(y1 - y2) < MAX_DISTANCE_Y) {
+                    finish();
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(event);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
@@ -166,7 +190,10 @@ public class RegisterActivity extends AppCompatActivity {
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
 
-        ViewGroup.LayoutParams layoutParams = lLogo.getLayoutParams();
-        layoutParams.height = height/3;
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            lLogo.getLayoutParams().height = height / 3;
+        }else{
+            lLogo.getLayoutParams().height = height /6;
+        }
     }
 }

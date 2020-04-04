@@ -36,7 +36,6 @@ public class VocabFrag extends Fragment {
     private PopupWindow popupWindow;
     private FrameLayout lVocabFrag_FrameLyout;
     private LinearLayout lLinearLayoutTransparent_PopUpWindow;
-    private TextView tvCrossClose_PopUpWindow;
 
     public VocabFrag() {
         // Required empty public constructor
@@ -56,7 +55,6 @@ public class VocabFrag extends Fragment {
         this.lVocabFrag_FrameLyout = (FrameLayout) v.findViewById(R.id.lFragmentVocab_FraeLayout);
         this.lLinearLayoutTransparent_PopUpWindow = (LinearLayout) w.findViewById(R.id.lLayoutTransparent_PopUpWindow);
         lLinearLayoutTransparent_PopUpWindow.setAlpha((float)(0.1));
-        this.tvCrossClose_PopUpWindow = w.findViewById(R.id.tvCross_close_PopUpWindow);
         // Inflate the layout for this fragment
         return v;
     }
@@ -79,7 +77,12 @@ public class VocabFrag extends Fragment {
             public void onClick(View view) {
                 //start activity pop up
                 inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                ViewGroup container = (ViewGroup) inflater.inflate(R.layout.l_popupwindow_addlist_vocabfrag, null);
+                ViewGroup container;
+                if (getActivity().getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                    container = (ViewGroup) inflater.inflate(R.layout.l_popupwindow_addlist_vocabfrag, null);
+                }else{
+                    container = (ViewGroup) inflater.inflate(R.layout.l_popupwindow_addlist_vocabfrag_land, null);
+                }
                 popupWindow = new PopupWindow(container, (int) (width), (int) (height), true);
                 lVocabFrag_FrameLyout.setAlpha((float)(0.1));
                 popupWindow.showAtLocation(lVocabFrag_FrameLyout, Gravity.CENTER, 0, -100);

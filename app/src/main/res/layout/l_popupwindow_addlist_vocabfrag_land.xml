@@ -12,8 +12,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/style_popupwindow"
-            android:layout_marginBottom="@dimen/marginBot_popUpWindow"
-            android:layout_marginTop="@dimen/marginTop_popUpWindow"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="55dp"
             android:layout_marginRight="@dimen/marginLeftRight_popUpWindow"
             android:layout_marginLeft="@dimen/marginLeftRight_popUpWindow"
             android:orientation="vertical">
@@ -61,14 +61,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_popUpAddList_nameList"
-                    android:layout_marginTop="@dimen/marginTop_betweenEdittextAndTitle_PopUpWindow"
+                    android:layout_marginTop="@dimen/marginTop_betweenEdittextAndTitle_PopUpWindow_land"
                     android:inputType="text"
                     >
                 </EditText>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/marginTop_betweenEditText_PopUpWindow"
+                    android:layout_marginTop="@dimen/marginTop_betweenEditText_PopUpWindow_land"
                     android:hint="@string/hint_popUpAddList_sharedWith"
                     android:inputType="text"
                     >
@@ -76,20 +76,14 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="10dp">
-
-                        <Button
-                            android:layout_width="110dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center_horizontal"
-                            android:background="@drawable/style_buttonaddlist_popupwindow"
-                            android:text="@string/text_buttonAddList_popUpAddList"
-                            android:textColor="#FFFFFF"></Button>
-                    </FrameLayout>
+                    <Button
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:background="@drawable/style_buttonaddlist_popupwindow"
+                        android:text="@string/text_buttonAddList_popUpAddList"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginBottom="15dp"></Button>
                 </FrameLayout>
             </LinearLayout>
         </LinearLayout>
