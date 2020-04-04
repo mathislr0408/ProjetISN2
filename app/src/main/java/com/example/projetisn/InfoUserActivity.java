@@ -33,7 +33,6 @@ public class InfoUserActivity extends AppCompatActivity {
     private Button bChangeInfos;
 
     float x1, x2, y1, y2, motionX;
-    String motionDirection;
     final static int MIN_DISTANCE_X = 150;
     final static int MAX_DISTANCE_Y = 150;
 

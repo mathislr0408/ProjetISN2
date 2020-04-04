@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -168,7 +169,10 @@ public class LoginActivity extends AppCompatActivity {
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
 
-        lAppNameLayout.getLayoutParams().height = height/3;
-
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            lAppNameLayout.getLayoutParams().height = height / 3;
+        }else{
+            lAppNameLayout.getLayoutParams().height = height / 6;
+        }
     }
 }
