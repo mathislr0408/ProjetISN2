@@ -1,6 +1,7 @@
 package com.example.projetisn;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private float motionX;
     private String motionDirection = null;
     boolean isAnimation = false;
-
 
     private void setFragment(Fragment fragment) {
         Fragment currentFrag = getCurrentFragment();
@@ -184,6 +184,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        getSupportFragmentManager().beginTransaction().detach(getCurrentFragment()).attach(getCurrentFragment()).commit();
+        lActionBar.getLayoutParams().height = (int)(height / 8.5);
+        navView.getLayoutParams().height = height / 9;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -195,11 +209,13 @@ public class MainActivity extends AppCompatActivity {
 
         navView = findViewById(R.id.nav_view);
         lActionBar = findViewById(R.id.lActionbar_MainActivity);
-        lActionBar.getLayoutParams().height = (int)(height / 8.5);
         vocabFrag = new VocabFrag();
         friendsFrag = new FriendsFrag();
         profilFrag = new ProfilFrag();
 
+        setFragment(vocabFrag);
+
+        lActionBar.getLayoutParams().height = (int)(height / 8.5);
         navView.getLayoutParams().height = height / 9;
 
         // Passing each menu ID as a set of Ids because each
